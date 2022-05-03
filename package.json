@@ -1,0 +1,27 @@
+{
+  "name": "redline-till-deadline",
+  "version": "1.0.0",
+  "description": "Non-profit guide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "concurrently \"cd server && npm run watch\"\"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build" : "cd client && npm run build", 
+    "seeds" : "cd server && npm run seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Villdevitchoff/Redline-till-deadline.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Villdevitchoff/Redline-till-deadline/issues"
+  },
+  "homepage": "https://github.com/Villdevitchoff/Redline-till-deadline#readme",
+  "dependencies": {
+    "concurrently": "^7.1.0"
+  }
+}
