@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "concurrently \"cd server && npm run watch\"\"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
-    "build" : "cd client && npm run build", 
-    "seeds" : "cd server && npm run seed",
-    "start" : "node server/server.js"
+    "build": "cd client && npm run build",
+    "seeds": "cd server && npm run seed",
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Villdevitchoff/Redline-till-deadline#readme",
   "dependencies": {
-    "concurrently": "^7.1.0"
+    "concurrently": "^7.1.0",
+    "graphql": "^16.4.0"
   }
 }
