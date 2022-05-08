@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/Villdevitchoff/Redline-till-deadline#readme",
   "dependencies": {
-    "concurrently": "^7.1.0",
-    "graphql": "^16.4.0"
+    "concurrently": "^7.1.0"
   }
 }
