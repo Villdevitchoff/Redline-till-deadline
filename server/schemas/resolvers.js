@@ -56,7 +56,7 @@ const resolvers = {
       // Return an `Auth` object that consists of the signed token and user's information
       return { token, user };
     },
-    addThought: async (parent, { thoughtText, thoughtAuthor }) => {
+    addThought: async (parent, { thoughtText, thoughtAuthor },context) => {
       const thought = await Thought.create({ thoughtText, thoughtAuthor });
 
       await User.findOneAndUpdate(
