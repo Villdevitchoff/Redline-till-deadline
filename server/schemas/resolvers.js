@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Thought } = require('../models');
 const { signToken } = require('../utils/auth');
+const { getNonProfits } = require("../utils/API");
 
 const resolvers = {
   Query: {
@@ -16,7 +17,11 @@ const resolvers = {
     },
     thought: async (parent, { thoughtId }) => {
       return Thought.findOne({ _id: thoughtId });
-    }
+    },
+    nonProfits: async () => {
+      const { data } = await getNonProfits();
+        return data.organizations
+    },
   },
 
   Mutation: {

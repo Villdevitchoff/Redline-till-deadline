@@ -8,7 +8,22 @@ const typeDefs = gql`
     password: String
     thoughts: [Thought]!
   }
-
+  type NonProfit {
+    ein: Int
+    strein: String
+    name: String
+    sub_name: String
+    city: String
+    state: String
+    ntee_code: String
+    raw_ntee_code: String
+    subseccd: Int
+    has_subseccd: Boolean
+    have_filings: Boolean
+    have_extracts: Boolean
+    have_pdfs: Boolean
+    score: Int
+  }
   type Thought {
     _id: ID
     thoughtText: String
@@ -34,6 +49,7 @@ const typeDefs = gql`
     user(username: String!): User
     thoughts(username: String): [Thought]
     thought(thoughtId: ID!): Thought
+    nonProfits:[NonProfit]
   }
 
   type Mutation {
