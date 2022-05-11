@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Thought } = require('../models');
 const { signToken } = require('../utils/auth');
+const { getNonProfits } = require("../utils/API");
 
 const resolvers = {
   Query: {
@@ -16,13 +17,17 @@ const resolvers = {
     },
     thought: async (parent, { thoughtId }) => {
       return Thought.findOne({ _id: thoughtId });
-    }
+    },
+    nonProfits: async () => {
+      const { data } = await getNonProfits();
+        return data.organizations
+    },
   },
 
   Mutation: {
-    addUser: async (parent, { username, email, password }) => {
+    addUser: async (parent, {firstName, lastName, email, password }) => {
       // First we create the user
-      const user = await User.create({ username, email, password });
+      const user = await User.create({firstName, lastName, email, password });
       // To reduce friction for the user, we immediately sign a JSON Web Token and log the user in after they are created
       const token = signToken(user);
       // Return an `Auth` object that consists of the signed token and user's information

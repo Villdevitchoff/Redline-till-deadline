@@ -28,6 +28,8 @@ class AuthService {
   }
 
   login(idToken) {
+    console.log("LongerPasswords!")
+    
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
 
