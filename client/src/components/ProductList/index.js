@@ -13,7 +13,9 @@ function ProductList() {
   const { currentCategory } = state;
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
-
+  //  fetch("https://projects.propublica.org/nonprofits/api/v2/search.json")
+  //  .then((response)=>response.json())
+  //  .then((data)=>console.log(data))
   useEffect(() => {
     if (data) {
       dispatch({
